@@ -1,0 +1,272 @@
+/* Color Palette
+# - #F1EEE8 (nav)
+# - #FFFFFF (header)
+# - #1C201E (work experience + footer)
+# - #E0392B (links)
+*/
+
+/* Global styles
+------------------------------------*/
+
+/* border fix */ /* Part 5: letter A */
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0; /* No white border */
+  padding-top: 66px; /* space for the fixed nav so it doesn't cover the header */
+  background: #1c201e;
+  color: #1c201e;
+  font-family: "Bitter", serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 1.2;
+}
+
+h1,
+h2 {
+  margin-top: 0; /* Added */
+  font-family: "Archivo", sans-serif;
+  font-stretch: 125%;
+  font-weight: 900;
+}
+
+main h2,
+footer h2 {
+  margin: 0;
+  font-size: 32px;
+}
+
+h3,
+p {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.content-wrap {
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 50px; /* added */
+  overflow: hidden; /* Part 4: letter F */
+}
+.column-narrow {
+  /* Part 6, letter D */
+  width: 30%;
+  float: left;
+  padding-right: 3%;
+  min-height: 175px;
+}
+.column-wide {
+  /* Part 6, letter D */
+  width: 70%;
+  float: left;
+  min-height: 225px;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px 28px;
+  padding: 22px 40px;
+  background: #f1eee8;
+  position: fixed; /* Part c: keeps the menu at the top while scrolling */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;  /* stays above the content as it scrolls underneath */
+}
+
+nav a {
+  font-family: "Archivo", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: #111111;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #e0392b;
+}
+
+/* Header & Footer
+------------------------------------*/
+header {
+  padding: 30px max(40px, calc((100% - 960px) / 2));
+  background: #ffffff;
+}
+
+.profile-img {
+  /* Part 4: letter B*/
+  grid-column: 1;
+  grid-row: 1 / 4;
+  /* width: 300px; */ /* width of 300px (Part 6, letter F*/
+  border-radius: 50%; /*value of 50% */
+  object-fit: cover;
+  /* float: left; */ /* Part 4: letter E (Part 6, letter F */
+  /* margin-right: 30px; */ /* Part 4: letter G (Part 6, letter F */
+}
+
+header p {
+  max-width: 800px;
+  text-align: justify;
+  margin-top: 20px;
+}
+
+header h1 {
+  margin: 0; /* Part 4: letter D  h1 name  and the h2 tagline to be closer together so remove the margin from both of these h1s and h2 headings */
+  font-size: 42px;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+header h2 {
+  margin: 0; /* Part 4: letter D   h1 name  and the h2 tagline to be closer together so remove the margin from both of these h1s and h2 headings*/
+  padding-top: 10px;
+  font-family: "Bitter", serif;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+footer {
+  padding: 50px max(40px, calc((100% - 960px) / 2)) 30px;
+  background: #1c201e;
+  color: #ffffff;
+  text-align: center; /* text;align: already there. Step 3 letter e */
+}
+
+.contact-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px 65px; /*65 px between the links */
+  margin-top: 40px;
+}
+
+.contact-info a {
+  color: #e0392b;
+  text-decoration: none;
+  padding: 10px; /* .contact-info a added (padding and display)*/
+  display: inline-block;
+}
+
+.copyright {
+  margin-top: 60px;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+/* Font Awesome icons in the contact info */
+.contact-info i, .contact-info svg {
+  margin-right: 8px; /* the Font Awesome script swaps each <i> for an <svg> */
+}
+
+/* Work Experience
+------------------------------------*/
+/* title, company and dates on the left, description on the right */
+.work {
+  padding: 40px max(40px, calc((100% - 960px) / 2)) 80px;
+  background: #1c201e;
+  color: #ffffff;
+}
+
+.work h2 {
+  grid-column: 1 / 3;
+  margin-bottom: 50px;
+}
+/* Part 6, letter G: */
+/*.work h3 {
+  /* margin-top: 60px; */ /* removed so the job title lines up with the summary.
+} */
+
+.work .job-desc {
+  padding-left: 0;
+}
+.work .column-wide p {
+  margin-bottom: 1em; 
+}
+.work ul {
+  padding-left: 1.5em;
+  margin-top: 0;
+}
+.work li {
+  margin-bottom: 0.4em;
+  line-height: 1.5;
+}
+/* Education
+------------------------------------*/
+.education {
+  padding: 40px max(40px, calc((100% - 960px) / 2)) 50px;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.55)),
+    url("../images/landscape.jpg") center 30% / cover no-repeat;
+}
+
+.education h3,
+.education p {
+  max-width: 900px;
+  padding-left: 60px;
+  font-weight: 400;
+  text-align: justify;
+}
+
+.education h3 {
+  margin-top: 50px;
+}
+
+/* Responsive Styles
+------------------------------------*/
+@media (max-width: 700px) {
+  header {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .profile-img {
+    grid-row: auto;
+    width: 220px;
+    height: 220px;
+    margin: 0 auto;
+  }
+
+  header h1 {
+    font-size: 28px;
+  }
+
+  header h2 {
+    margin-bottom: 25px;
+  }
+
+  .work {
+    display: block;
+    padding: 40px 20px 60px;
+  }
+
+  .education {
+    padding: 40px 20px 50px;
+  }
+
+  .work h3,
+  .work p,
+  .education h3,
+  .education p {
+    padding-left: 0;
+  }
+
+  .work h3 {
+    margin-top: 40px;
+  }
+
+  .work .job-desc {
+    margin-top: 12px;
+  }
+}
